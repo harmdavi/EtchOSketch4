@@ -2,9 +2,7 @@
 'RCET0265
 'Spring 2020
 'EtchOSketch
-'
-
-
+'https://github.com/harmdavi/EtchOSketch4.git
 Public Class EtchOSketch4
     Dim LastX As Integer
     Dim LastY As Integer
