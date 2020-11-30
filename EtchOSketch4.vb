@@ -3,19 +3,23 @@
 'Spring 2020
 'EtchOSketch
 'https://github.com/harmdavi/EtchOSketch4.git
+
+Option Explicit On
+Option Strict On 'won't compile - TJR
+
 Public Class EtchOSketch4
-    Dim LastX As Integer
-    Dim LastY As Integer
-    Dim CurrentX As Integer
-    Dim CurrentY As Integer
-    Dim PenColor As Color
-    Dim WidthDU As Integer
-    Dim HeightDU As Integer
-    Dim VP As Integer
-    Dim TimeStep As Integer
-    Dim DataPoint As Integer
-    Dim LastTime As Integer
-    Dim LastAmp As Integer
+    Dim LastX As Integer 'CamelCase - TJR
+    Dim LastY As Integer '
+    Dim CurrentX As Integer '
+    Dim CurrentY As Integer '
+    Dim PenColor As Color '
+    Dim WidthDU As Integer '
+    Dim HeightDU As Integer '
+    Dim VP As Integer '
+    Dim TimeStep As Integer '
+    Dim DataPoint As Integer '
+    Dim LastTime As Integer '
+    Dim LastAmp As Integer 'CamelCase - TJR
     Sub Drawline()
         'This declares the variable g as a graphics type and also the pen that will be used.
         Dim g As Graphics = PictureBox1.CreateGraphics
@@ -90,11 +94,11 @@ Public Class EtchOSketch4
         WidthDU = PictureBox1.Size.Width
         HeightDU = PictureBox1.Size.Height
         VP = HeightDU - 10
-        TimeStep = WidthDU / 150
+        TimeStep = WidthDU / 150 'crash with Option Strict On - TJR
         'The provides the data points needed to create a sine wave. 
         For i = 1 To 150
-            TimeStep = (Width / 150) = +TimeStep
-            DataPoint = VP * Math.Sin((180 * Math.PI) * 360 * (1 / WidthDU) * (TimeStep)) - (HeightDU / 2)
+            TimeStep = (Width / 150) = +TimeStep 'crash with Option Strict On - TJR
+            DataPoint = VP * Math.Sin((180 * Math.PI) * 360 * (1 / WidthDU) * (TimeStep)) - (HeightDU / 2) 'crash with Option Strict On - TJR
             Dim g As Graphics = PictureBox1.CreateGraphics
             Dim pen As New Pen(PenColor)
             g.DrawLine(pen, LastTime, LastAmp, TimeStep, DataPoint)
